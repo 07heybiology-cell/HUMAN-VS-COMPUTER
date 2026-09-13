@@ -1,0 +1,1845 @@
+/* ========================================
+   HUMAN VS COMPUTER
+   Main Stylesheet
+======================================== */
+
+
+/* ========================================
+   GLOBAL
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #070b18;
+    color: #ffffff;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+
+button {
+    font-family: inherit;
+}
+
+
+::selection {
+    background: #7c5cff;
+    color: #ffffff;
+}
+
+
+/* ========================================
+   NAVIGATION
+======================================== */
+
+.navbar {
+    width: 100%;
+    min-height: 75px;
+    padding: 0 7%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+
+    background: rgba(7, 11, 24, 0.92);
+
+    position: relative;
+    z-index: 10;
+}
+
+
+.logo {
+    font-size: 19px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+
+.logo span {
+    color: #7c5cff;
+}
+
+
+.nav-info {
+    color: #aeb6cc;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+/* ========================================
+   HERO SECTION
+======================================== */
+
+.hero {
+    min-height: 720px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 80px 20px 100px;
+
+    text-align: center;
+
+    position: relative;
+}
+
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    background: rgba(124, 92, 255, 0.10);
+
+    filter: blur(100px);
+
+    border-radius: 50%;
+
+    top: 50px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    pointer-events: none;
+}
+
+
+.hero-content {
+    width: 100%;
+    max-width: 1000px;
+
+    position: relative;
+    z-index: 1;
+}
+
+
+.brain-icon {
+    font-size: 60px;
+    margin-bottom: 15px;
+
+    animation: floatBrain 3s ease-in-out infinite;
+}
+
+
+@keyframes floatBrain {
+
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+
+}
+
+
+.subtitle {
+    color: #8d7aff;
+
+    font-size: 13px;
+    font-weight: 900;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 12px;
+}
+
+
+.hero h1 {
+    font-size: clamp(42px, 7vw, 82px);
+
+    line-height: 1.05;
+
+    font-weight: 950;
+
+    letter-spacing: -2px;
+
+    margin-bottom: 25px;
+}
+
+
+.hero h1 span {
+    color: #7c5cff;
+}
+
+
+.description {
+    max-width: 720px;
+
+    margin: 0 auto;
+
+    color: #aeb6cc;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+}
+
+
+/* ========================================
+   CHALLENGE CARDS
+======================================== */
+
+.challenge-list {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 15px;
+
+    max-width: 900px;
+
+    margin: 45px auto 35px;
+}
+
+
+.challenge-card {
+    padding: 22px 15px;
+
+    background: rgba(255, 255, 255, 0.035);
+
+    border: 1px solid rgba(124, 92, 255, 0.25);
+
+    border-radius: 18px;
+
+    transition: 0.25s ease;
+}
+
+
+.challenge-card:hover {
+    transform: translateY(-6px);
+
+    background: rgba(124, 92, 255, 0.09);
+
+    border-color: rgba(124, 92, 255, 0.55);
+}
+
+
+.challenge-icon {
+    font-size: 30px;
+
+    margin-bottom: 10px;
+}
+
+
+.challenge-card h3 {
+    font-size: 16px;
+
+    margin-bottom: 6px;
+}
+
+
+.challenge-card p {
+    color: #7d879d;
+
+    font-size: 13px;
+
+    line-height: 1.4;
+}
+
+
+/* ========================================
+   START BUTTON
+======================================== */
+
+.start-btn {
+    border: none;
+
+    background: #7c5cff;
+
+    color: #ffffff;
+
+    padding: 16px 30px;
+
+    border-radius: 12px;
+
+    font-size: 15px;
+
+    font-weight: 900;
+
+    letter-spacing: 0.5px;
+
+    cursor: pointer;
+
+    box-shadow: 0 10px 30px rgba(124, 92, 255, 0.25);
+
+    transition: 0.25s ease;
+}
+
+
+.start-btn span {
+    margin-left: 10px;
+
+    font-size: 18px;
+}
+
+
+.start-btn:hover {
+    transform: translateY(-3px);
+
+    background: #8d7aff;
+
+    box-shadow: 0 15px 35px rgba(124, 92, 255, 0.35);
+}
+
+
+.start-btn:active {
+    transform: translateY(0);
+}
+
+
+.game-note {
+    margin-top: 18px;
+
+    color: #626c83;
+
+    font-size: 13px;
+}
+
+
+/* ========================================
+   INFORMATION SECTIONS
+======================================== */
+
+.info-section,
+.technology-section,
+.objective-section {
+    width: 100%;
+
+    padding: 100px 7%;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+
+.section-heading {
+    max-width: 700px;
+
+    margin: 0 auto 55px;
+
+    text-align: center;
+}
+
+
+.section-heading h2 {
+    font-size: clamp(30px, 5vw, 48px);
+
+    margin-bottom: 15px;
+}
+
+
+.section-heading > p:last-child {
+    color: #8f98ad;
+
+    line-height: 1.7;
+
+    font-size: 16px;
+}
+
+
+/* ========================================
+   HOW IT WORKS
+======================================== */
+
+.steps-container {
+    max-width: 1100px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+
+.step-card {
+    position: relative;
+
+    padding: 30px 22px;
+
+    min-height: 280px;
+
+    background: rgba(255, 255, 255, 0.035);
+
+    border: 1px solid rgba(124, 92, 255, 0.22);
+
+    border-radius: 20px;
+
+    transition: 0.25s ease;
+}
+
+
+.step-card:hover {
+    transform: translateY(-7px);
+
+    border-color: rgba(124, 92, 255, 0.55);
+
+    background: rgba(124, 92, 255, 0.07);
+}
+
+
+.step-number {
+    position: absolute;
+
+    top: 18px;
+    right: 20px;
+
+    color: rgba(141, 122, 255, 0.45);
+
+    font-size: 13px;
+
+    font-weight: 900;
+}
+
+
+.step-icon {
+    font-size: 40px;
+
+    margin: 25px 0 18px;
+}
+
+
+.step-card h3 {
+    font-size: 20px;
+
+    margin-bottom: 12px;
+}
+
+
+.step-card p {
+    color: #8993aa;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* ========================================
+   TECHNOLOGY
+======================================== */
+
+.technology-section {
+    background: rgba(255, 255, 255, 0.015);
+}
+
+
+.technology-container {
+    max-width: 950px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+.technology-card {
+    text-align: center;
+
+    padding: 35px 25px;
+
+    background: rgba(255, 255, 255, 0.035);
+
+    border: 1px solid rgba(124, 92, 255, 0.22);
+
+    border-radius: 20px;
+
+    transition: 0.25s ease;
+}
+
+
+.technology-card:hover {
+    transform: translateY(-6px);
+
+    border-color: rgba(124, 92, 255, 0.55);
+}
+
+
+.technology-icon {
+    font-size: 42px;
+
+    margin-bottom: 18px;
+}
+
+
+.technology-card h3 {
+    font-size: 21px;
+
+    margin-bottom: 12px;
+}
+
+
+.technology-card p {
+    color: #8993aa;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* ========================================
+   PROJECT OBJECTIVE
+======================================== */
+
+.objective-section {
+    padding-top: 80px;
+
+    padding-bottom: 80px;
+}
+
+
+.objective-content {
+    max-width: 1000px;
+
+    margin: auto;
+
+    padding: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 35px;
+
+    background: linear-gradient(
+        135deg,
+        rgba(124, 92, 255, 0.12),
+        rgba(255, 255, 255, 0.025)
+    );
+
+    border: 1px solid rgba(124, 92, 255, 0.3);
+
+    border-radius: 25px;
+}
+
+
+.objective-icon {
+    min-width: 100px;
+
+    height: 100px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 50px;
+
+    background: rgba(124, 92, 255, 0.12);
+
+    border-radius: 20px;
+}
+
+
+.objective-content h2 {
+    font-size: clamp(24px, 4vw, 38px);
+
+    line-height: 1.2;
+
+    margin-bottom: 15px;
+}
+
+
+.objective-content p:last-child {
+    color: #929bb0;
+
+    line-height: 1.7;
+
+    max-width: 750px;
+}
+
+
+/* ========================================
+   MEMORY GAME
+======================================== */
+
+#memoryObjects {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    max-width: 800px;
+
+    margin: 35px auto;
+}
+
+
+#memoryObjects button {
+    transition: 0.2s ease;
+}
+
+
+#memoryObjects button:hover {
+    transform: translateY(-3px);
+}
+
+
+#memoryGame h2 {
+    color: #ffffff;
+
+    font-size: 22px;
+
+    margin-top: 25px;
+}
+
+
+#memoryResult {
+    margin-top: 25px;
+
+    color: #aeb6cc;
+
+    line-height: 1.7;
+}
+
+
+#memoryResult h2 {
+    margin-bottom: 10px;
+}
+
+
+/* ========================================
+   PATTERN GAME
+======================================== */
+
+#patternGame {
+    width: 100%;
+
+    max-width: 700px;
+
+    margin: 35px auto;
+}
+
+
+.pattern-box {
+    margin: 30px auto;
+
+    padding: 30px;
+
+    max-width: 600px;
+
+    font-size: 32px;
+
+    font-weight: 800;
+
+    letter-spacing: 4px;
+
+    background: rgba(124, 92, 255, 0.1);
+
+    border: 1px solid rgba(124, 92, 255, 0.4);
+
+    border-radius: 18px;
+}
+
+
+#patternOptions {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 15px;
+
+    max-width: 500px;
+
+    margin: 25px auto;
+}
+
+
+.pattern-option {
+    padding: 16px;
+
+    border: 1px solid rgba(124, 92, 255, 0.4);
+
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.05);
+
+    color: #ffffff;
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+
+.pattern-option:hover {
+    background: rgba(124, 92, 255, 0.25);
+
+    transform: translateY(-3px);
+}
+
+
+.pattern-option:disabled {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* ========================================
+   REACTION GAME
+======================================== */
+
+#reactionGame {
+    width: 100%;
+
+    max-width: 650px;
+
+    margin: 40px auto;
+}
+
+
+.reaction-box {
+    width: 100%;
+
+    max-width: 550px;
+
+    height: 280px;
+
+    margin: 0 auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: rgba(255, 255, 255, 0.05);
+
+    border: 2px solid rgba(124, 92, 255, 0.4);
+
+    border-radius: 25px;
+
+    cursor: pointer;
+
+    user-select: none;
+
+    transition:
+        background 0.15s ease,
+        border-color 0.15s ease,
+        transform 0.15s ease;
+}
+
+
+.reaction-box span {
+    font-size: 28px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+
+.reaction-go {
+    background: #24b36b;
+
+    border-color: #24b36b;
+
+    transform: scale(1.02);
+}
+
+
+.reaction-too-early {
+    background: #b33a3a;
+
+    border-color: #b33a3a;
+}
+
+
+#reactionResult {
+    margin-top: 30px;
+
+    color: #aeb6cc;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+}
+
+
+#reactionResult h2 {
+    color: #ffffff;
+
+    font-size: 42px;
+
+    margin-bottom: 10px;
+}
+
+
+#reactionResult strong {
+    color: #8d7aff;
+}
+
+
+/* ========================================
+   LOGIC GAME
+======================================== */
+
+#logicGame {
+    width: 100%;
+
+    max-width: 700px;
+
+    margin: 35px auto;
+}
+
+
+.logic-box {
+    margin: 30px auto;
+
+    padding: 30px;
+
+    max-width: 650px;
+
+    font-size: 21px;
+
+    line-height: 1.6;
+
+    font-weight: 700;
+
+    background: rgba(124, 92, 255, 0.1);
+
+    border: 1px solid rgba(124, 92, 255, 0.4);
+
+    border-radius: 18px;
+}
+
+
+#logicOptions {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 15px;
+
+    max-width: 600px;
+
+    margin: 25px auto;
+}
+
+
+.logic-option {
+    padding: 16px;
+
+    border: 1px solid rgba(124, 92, 255, 0.4);
+
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.05);
+
+    color: #ffffff;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+
+.logic-option:hover {
+    background: rgba(124, 92, 255, 0.25);
+
+    transform: translateY(-3px);
+}
+
+
+.logic-option:disabled {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* ========================================
+   FINAL RESULT
+======================================== */
+
+.result-card {
+    width: 100%;
+
+    max-width: 750px;
+
+    margin: 35px auto;
+
+    padding: 35px;
+
+    background: rgba(255, 255, 255, 0.035);
+
+    border: 1px solid rgba(124, 92, 255, 0.35);
+
+    border-radius: 25px;
+}
+
+
+.result-card > h2 {
+    font-size: 30px;
+
+    margin-bottom: 30px;
+}
+
+
+.score-comparison {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    margin-bottom: 35px;
+}
+
+
+.score-box {
+    min-width: 180px;
+
+    padding: 25px;
+
+    background: rgba(124, 92, 255, 0.1);
+
+    border: 1px solid rgba(124, 92, 255, 0.3);
+
+    border-radius: 18px;
+}
+
+
+.score-box span {
+    display: block;
+
+    color: #aeb6cc;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    margin-bottom: 10px;
+}
+
+
+.score-box strong {
+    font-size: 45px;
+
+    display: inline-block;
+}
+
+
+.score-box small {
+    color: #7d879d;
+
+    font-size: 14px;
+}
+
+
+.vs-text {
+    font-size: 20px;
+
+    font-weight: 900;
+
+    color: #8d7aff;
+}
+
+
+.round-scores {
+    margin-bottom: 30px;
+
+    text-align: left;
+
+    max-width: 450px;
+
+    margin-left: auto;
+
+    margin-right: auto;
+}
+
+
+.round-scores h3 {
+    margin-bottom: 15px;
+
+    text-align: center;
+}
+
+
+.round-scores p {
+    padding: 10px 0;
+
+    color: #aeb6cc;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+
+    display: flex;
+
+    justify-content: space-between;
+}
+
+
+.round-scores strong {
+    color: #8d7aff;
+}
+
+
+.human-winner {
+    color: #24b36b;
+}
+
+
+.computer-winner {
+    color: #8d7aff;
+}
+
+
+.tie-winner {
+    color: #f0b84b;
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+footer {
+    padding: 30px 20px;
+
+    text-align: center;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+
+    color: #626c83;
+
+    font-size: 13px;
+
+    line-height: 1.8;
+}
+
+
+footer p:first-child {
+    color: #8993aa;
+
+    margin-bottom: 3px;
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 900px) {
+
+    .challenge-list {
+        grid-template-columns: repeat(2, 1fr);
+
+        max-width: 650px;
+    }
+
+
+    .steps-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .technology-container {
+        grid-template-columns: 1fr;
+
+        max-width: 550px;
+    }
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+    .navbar {
+        padding: 0 20px;
+    }
+
+
+    .logo {
+        font-size: 14px;
+    }
+
+
+    .nav-info {
+        font-size: 11px;
+    }
+
+
+    .hero {
+        min-height: 650px;
+
+        padding: 60px 18px 80px;
+    }
+
+
+    .brain-icon {
+        font-size: 48px;
+    }
+
+
+    .hero h1 {
+        font-size: 42px;
+
+        letter-spacing: -1px;
+    }
+
+
+    .description {
+        font-size: 15px;
+    }
+
+
+    .challenge-list {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 10px;
+
+        margin-top: 35px;
+    }
+
+
+    .challenge-card {
+        padding: 18px 10px;
+    }
+
+
+    .challenge-icon {
+        font-size: 25px;
+    }
+
+
+    .challenge-card h3 {
+        font-size: 14px;
+    }
+
+
+    .challenge-card p {
+        font-size: 11px;
+    }
+
+
+    .info-section,
+    .technology-section,
+    .objective-section {
+        padding: 70px 18px;
+    }
+
+
+    .steps-container {
+        grid-template-columns: 1fr;
+    }
+
+
+    .step-card {
+        min-height: auto;
+    }
+
+
+    .objective-content {
+        padding: 28px 20px;
+
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+
+    .objective-icon {
+        min-width: 80px;
+
+        width: 80px;
+
+        height: 80px;
+
+        font-size: 40px;
+    }
+
+
+    .pattern-box {
+        font-size: 22px;
+
+        padding: 22px;
+
+        letter-spacing: 2px;
+    }
+
+
+    #patternOptions {
+        grid-template-columns: 1fr;
+    }
+
+
+    .logic-box {
+        font-size: 17px;
+
+        padding: 22px;
+    }
+
+
+    #logicOptions {
+        grid-template-columns: 1fr;
+    }
+
+
+    .reaction-box {
+        height: 220px;
+    }
+
+
+    .reaction-box span {
+        font-size: 21px;
+    }
+
+
+    #reactionResult h2 {
+        font-size: 34px;
+    }
+
+
+    .score-comparison {
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+
+    .score-box {
+        width: 100%;
+    }
+
+
+    .vs-text {
+        font-size: 16px;
+    }
+
+
+    .result-card {
+        padding: 22px 15px;
+    }
+
+
+    .result-card > h2 {
+        font-size: 25px;
+    }
+
+
+    .round-scores {
+        width: 100%;
+    }
+
+
+    .start-btn {
+        padding: 15px 22px;
+
+        font-size: 14px;
+    }
+
+}
+/* ========================================
+   PLAYER NAME
+======================================== */
+
+.player-name-box {
+    width: 100%;
+    max-width: 400px;
+    margin: 25px auto 18px;
+    text-align: left;
+}
+
+.player-name-box label {
+    display: block;
+    margin-bottom: 8px;
+
+    color: #aeb6cc;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+.player-name-box input {
+    width: 100%;
+
+    padding: 15px 18px;
+
+    background: rgba(255, 255, 255, 0.05);
+
+    border: 1px solid rgba(124, 92, 255, 0.35);
+
+    border-radius: 12px;
+
+    color: #ffffff;
+
+    font-size: 16px;
+
+    outline: none;
+
+    transition: 0.2s ease;
+}
+
+.player-name-box input::placeholder {
+    color: #626c83;
+}
+
+.player-name-box input:focus {
+    border-color: #7c5cff;
+
+    background: rgba(124, 92, 255, 0.08);
+
+    box-shadow: 0 0 0 3px rgba(124, 92, 255, 0.1);
+}
+
+
+@media (max-width: 600px) {
+
+    .player-name-box {
+        max-width: 100%;
+    }
+
+}
+/* ========================================
+   FINAL RESULT SCORE BARS
+======================================== */
+
+.round-scores {
+    margin-top: 25px;
+    width: 100%;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+.round-scores h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.score-row {
+    margin-bottom: 18px;
+}
+
+.score-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 7px;
+    color: #d9def0;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.score-bar {
+    width: 100%;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.score-fill {
+    height: 100%;
+    border-radius: 20px;
+    background: #7c5cff;
+    transition: width 1s ease;
+}
+/* ========================================
+   PERFORMANCE ANALYSIS
+======================================== */
+
+.performance-analysis {
+    width: 100%;
+    max-width: 600px;
+
+    margin: 30px auto 0;
+    padding: 25px;
+
+    background: rgba(124, 92, 255, 0.06);
+
+    border: 1px solid rgba(124, 92, 255, 0.2);
+
+    border-radius: 18px;
+
+    text-align: center;
+}
+
+.performance-analysis h3 {
+    margin-bottom: 15px;
+
+    color: #ffffff;
+
+    font-size: 18px;
+}
+
+.analysis-main {
+    color: #aeb6cc;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    margin-bottom: 22px;
+}
+
+.analysis-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 15px;
+}
+
+.analysis-card {
+    padding: 20px 15px;
+
+    background: rgba(255, 255, 255, 0.04);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 14px;
+}
+
+.analysis-icon {
+    display: block;
+
+    font-size: 28px;
+
+    margin-bottom: 10px;
+}
+
+.analysis-card p {
+    margin: 0 0 8px;
+
+    color: #7c5cff;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+.analysis-card h4 {
+    margin: 0 0 8px;
+
+    color: #ffffff;
+
+    font-size: 17px;
+}
+
+.analysis-card > span:last-child {
+    color: #aeb6cc;
+
+    font-size: 13px;
+}
+
+
+/* ========================================
+   ANALYSIS RESPONSIVE
+======================================== */
+
+@media (max-width: 600px) {
+
+    .analysis-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .performance-analysis {
+        padding: 20px 15px;
+    }
+
+}
+/* ========================================
+   GAME PROGRESS
+======================================== */
+
+.game-progress {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 8px;
+
+    color: #aeb6cc;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+.progress-track {
+    width: 100%;
+    height: 8px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+
+    background: #7c5cff;
+
+    border-radius: 20px;
+
+    transition: width 0.5s ease;
+}
+/* ========================================
+   GAME ANIMATIONS
+======================================== */
+
+.hero-content {
+    animation: gameFadeIn 0.5s ease;
+}
+
+@keyframes gameFadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* ========================================
+   BUTTON ANIMATION
+======================================== */
+
+button {
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease,
+        background 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: scale(0.96);
+}
+
+
+/* ========================================
+   RESULT ANIMATION
+======================================== */
+
+.result-card {
+    animation: resultAppear 0.7s ease;
+}
+
+@keyframes resultAppear {
+
+    from {
+        opacity: 0;
+        transform: scale(0.92);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+
+/* ========================================
+   WINNER ANIMATION
+======================================== */
+
+.human-winner,
+.computer-winner,
+.tie-winner {
+
+    animation:
+        winnerPulse
+        1.2s
+        ease-in-out
+        infinite
+        alternate;
+
+}
+
+@keyframes winnerPulse {
+
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.04);
+    }
+
+}
+
+
+/* ========================================
+   SCORE BAR ANIMATION
+======================================== */
+
+.score-fill {
+    animation:
+        scoreBarAppear
+        1.2s
+        ease;
+}
+
+@keyframes scoreBarAppear {
+
+    from {
+        width: 0 !important;
+    }
+
+}
+
+
+/* ========================================
+   PROGRESS BAR
+======================================== */
+
+.game-progress {
+
+    width: 100%;
+    max-width: 600px;
+
+    margin:
+        0 auto 30px;
+
+}
+
+
+.progress-info {
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    margin-bottom: 8px;
+
+    color: #aeb6cc;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+}
+
+
+.progress-track {
+
+    width: 100%;
+
+    height: 8px;
+
+    background:
+        rgba(255,255,255,0.08);
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+}
+
+
+.progress-fill {
+
+    height: 100%;
+
+    background: #7c5cff;
+
+    border-radius: 20px;
+
+    transition:
+        width 0.6s ease;
+
+}
+
+
+/* ========================================
+   PROGRESS ANIMATION
+======================================== */
+
+.progress-fill {
+
+    animation:
+        progressAppear
+        0.8s
+        ease;
+
+}
+
+
+@keyframes progressAppear {
+
+    from {
+        width: 0;
+    }
+
+}
+
+
+/* ========================================
+   MEMORY GRID
+======================================== */
+
+.memory-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    gap: 15px;
+
+    width: 100%;
+
+    max-width: 600px;
+
+    margin:
+        25px auto;
+
+}
+
+
+.memory-object {
+
+    min-height: 90px;
+
+    border:
+        1px solid
+        rgba(124,92,255,0.3);
+
+    border-radius: 15px;
+
+    background:
+        rgba(255,255,255,0.05);
+
+    font-size: 42px;
+
+}
+
+
+/* ========================================
+   REACTION BOX
+======================================== */
+
+.reaction-box {
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+
+}
+
+
+.reaction-box:active {
+
+    transform:
+        scale(0.97);
+
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+    .memory-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .game-progress {
+
+        margin-bottom: 20px;
+
+    }
+
+
+    .progress-info {
+
+        font-size: 11px;
+
+    }
+
+
+    .result-card {
+
+        animation-duration:
+            0.5s;
+
+    }
+
+}
